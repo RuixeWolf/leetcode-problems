@@ -1,0 +1,20 @@
+export default [
+  { input: 0, expected: 'Zero' },
+  { input: 1, expected: 'One' },
+  { input: 20, expected: 'Twenty' },
+  { input: 100, expected: 'One Hundred' },
+  { input: 1000, expected: 'One Thousand' },
+  { input: 10000, expected: 'Ten Thousand' },
+  { input: 100000, expected: 'One Hundred Thousand' },
+  { input: 101, expected: 'One Hundred One' },
+  { input: 1001, expected: 'One Thousand One' },
+  { input: 10001, expected: 'Ten Thousand One' },
+  { input: 1000000, expected: 'One Million' },
+  { input: 12, expected: 'Twelve' },
+  { input: 13, expected: 'Thirteen' },
+  { input: 73, expected: 'Seventy Three' },
+  { input: 123, expected: 'One Hundred Twenty Three' },
+  { input: 12345, expected: 'Twelve Thousand Three Hundred Forty Five' },
+  { input: 1234567, expected: 'One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven' },
+  { input: 1234567891, expected: 'One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One' }
+]
