@@ -1,0 +1,25 @@
+{
+  "name": "leetcode-problems",
+  "version": "1.0.0",
+  "description": "Ruixe 的 LeetCode 算法题集，使用 TypeScript 语言，集成 Jest 单元测试",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": ["LeetCode", "TypeScript", "Unittest"],
+  "author": "RuixeWolf",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/jest": "^29.2.2",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "jest": "^29.2.2",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "*"
+  }
+}
