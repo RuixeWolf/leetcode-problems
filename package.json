@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest"
   },
-  "keywords": ["LeetCode", "TypeScript", "Unittest"],
+  "keywords": ["LeetCode", "TypeScript", "UnitTest"],
   "author": "RuixeWolf",
   "license": "MIT",
   "devDependencies": {
