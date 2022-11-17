@@ -73,7 +73,6 @@ function removeComments (source: string[]): string[] {
 
   // 初始化状态
   let charIndex = 0
-  let isString = false
   let resultString = ''
 
   // 遍历代码字符
@@ -82,11 +81,24 @@ function removeComments (source: string[]): string[] {
     const currentChar = sourceString[charIndex]
     const nextChar = sourceString[charIndex + 1]
 
-    // 1. 设置字符串状态
-    if (currentChar === '"') isString = !isString
+    // 1. 处理字符串
+    if (currentChar === '"') {
+      // 寻找下一个“"”
+      const nextIndex = sourceString.indexOf('"', charIndex)
+      // 找不到下一个“"”则说明直到代码结束都时该字符串也没有结束，将剩下的字符添加至 resultString，直接结束遍历
+      if (nextIndex === -1) {
+        resultString += sourceString.substring(charIndex, sourceString.length)
+        break
+      }
+      // 将当前字符串代码添加至 resultString
+      resultString += sourceString.substring(charIndex, nextIndex + 1)
+      // 将字符索引设置为下一个“"”字符之后
+      charIndex = nextIndex + 1
+      continue
+    }
 
     // 2. 跳过单行注释（不为字符串时，判断当前字符与下一个字符的组合是否为“//”）
-    if (!isString && (currentChar + nextChar === '//')) {
+    if (currentChar + nextChar === '//') {
       // 寻找下一个换行符的位置
       const nextIndex = sourceString.indexOf('\n', charIndex)
       // 找不到下一个换行符则说明直到代码结束都不在有换行符，直接结束遍历
@@ -97,7 +109,7 @@ function removeComments (source: string[]): string[] {
     }
 
     // 3. 跳过多行注释（不为字符串时，判断当前字符与下一个字符的组合是否为 “/*”）
-    if (!isString && (currentChar + nextChar === '/*')) {
+    if (currentChar + nextChar === '/*') {
       // 将字符索引设置为下一个 “*/” 之后，开始查找的索引为当前 “/*” 之后
       const nextIndex = sourceString.indexOf('*/', charIndex + 2)
       if (nextIndex === -1) break
