@@ -1,0 +1,27 @@
+/*
+<%= titleNumber %>. <%= titleChinese %>
+难度：<%= difficulty %>
+题目链接：<%= problemLink %>
+
+
+*/
+
+import { fileURLToPath } from 'url'
+import testCases from '../tests/testCases/<%= moduleName %>.js'
+
+/**
+ * <%= titleChinese %>
+ * - LeetCode 入口
+ * @param {string} param1 - 
+ * @returns {string} 
+ */
+export function <%= leetCodeFunctionName %> (param1: string): string {
+  
+}
+
+// Debug
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const { input, expected } = testCases[0]
+  const output = <%= leetCodeFunctionName %>(input)
+  console.log({ input, output, expected })
+}
