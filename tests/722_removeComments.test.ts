@@ -1,6 +1,6 @@
 import { describe, test, expect } from '@jest/globals'
-import testCases from './testCases/722_removeComments'
-import { removeComments } from '../src/722_removeComments'
+import testCases from './testCases/722_removeComments.js'
+import { removeComments } from '../src/722_removeComments.js'
 
 describe('722. Remove Comments', () => {
   testCases.forEach((testCase, index) => {

@@ -1,6 +1,6 @@
 import { describe, test, expect } from '@jest/globals'
-import testCases from './testCases/704_binarySearch'
-import { search } from '../src/704_binarySearch'
+import testCases from './testCases/704_binarySearch.js'
+import { search } from '../src/704_binarySearch.js'
 
 describe('704. Binary Search', () => {
   testCases.forEach(({ input, expected }, index) => {

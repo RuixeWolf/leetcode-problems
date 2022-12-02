@@ -1,5 +1,4 @@
-import testCases from '../tests/testCases/722_removeComments'
-
+/* eslint-disable import/first */
 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 `
 722. 删除注释
@@ -61,13 +60,16 @@ source[i] 由可打印的 ASCII 字符组成。
 给定的源码中不会有单引号、双引号或其他控制字符。
 `
 
+import { fileURLToPath } from 'url'
+import testCases from '../tests/testCases/722_removeComments.js'
+
 /**
  * 去除 C++ 程序的注释
  * - LeetCode 入口
  * @param {string[]} source - 源码行数组
  * @returns {string[]} 去除注释后的代码行数组
  */
-function removeComments (source: string[]): string[] {
+export function removeComments (source: string[]): string[] {
   // 使用换行符合并所有代码行
   const sourceString = source.join('\n')
 
@@ -127,9 +129,7 @@ function removeComments (source: string[]): string[] {
 }
 
 // Debug
-if (require.main === module) {
-  const testCase = testCases[0]
-  console.log({ input: testCase.input, output: removeComments(testCase.input), expected: testCase.expected })
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const { input, expected } = testCases[0]
+  console.log({ input, output: removeComments(input), expected })
 }
-
-export { removeComments }

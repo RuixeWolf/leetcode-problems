@@ -1,5 +1,3 @@
-import testCases from '../tests/testCases/704_binarySearch'
-
 /*
 704. 二分查找
 https://leetcode.cn/problems/binary-search/
@@ -23,6 +21,9 @@ n 将在 [1, 10000]之间。
 nums 的每个元素都将在 [-9999, 9999]之间。
 */
 
+import { fileURLToPath } from 'url'
+import testCases from '../tests/testCases/704_binarySearch.js'
+
 /**
  * 二分查找元素下标
  * - LeetCode 入口
@@ -30,7 +31,7 @@ nums 的每个元素都将在 [-9999, 9999]之间。
  * @param target - 待查找的数字
  * @returns {number} 元素下标
  */
-function search (nums: number[], target: number): number {
+export function search (nums: number[], target: number): number {
   // 使用左右指针，每次查找 [left, right) 最中间的值
   let left = 0
   let right = nums.length
@@ -51,10 +52,8 @@ function search (nums: number[], target: number): number {
 }
 
 // Debug
-if (require.main === module) {
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const { input, expected } = testCases[6]
   const output = search(input.nums, input.target)
   console.log({ input, output, expected })
 }
-
-export { search }

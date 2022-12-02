@@ -38,7 +38,7 @@ https://leetcode.cn/problems/sign-of-the-product-of-an-array/
  * @param {number[]} nums - 整数数组
  * @return {1 | 0 | -1} 乘积结果
  */
-function arraySign (nums: number[]): number {
+export function arraySign (nums: number[]): number {
   if (nums.includes(0)) return 0
   // 先假设乘积为正数
   let isPositive = true
@@ -48,5 +48,3 @@ function arraySign (nums: number[]): number {
   }
   return isPositive ? 1 : -1
 }
-
-export { arraySign }

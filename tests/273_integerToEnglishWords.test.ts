@@ -1,6 +1,6 @@
 import { describe, test, expect } from '@jest/globals'
-import testCases from './testCases/273_integerToEnglishWords'
-import { numberToWords } from '../src/273_integerToEnglishWords'
+import testCases from './testCases/273_integerToEnglishWords.js'
+import { numberToWords } from '../src/273_integerToEnglishWords.js'
 
 describe('273. Integer to english words', () => {
   testCases.forEach((testCase, index) => {

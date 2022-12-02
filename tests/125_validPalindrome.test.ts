@@ -1,6 +1,6 @@
 import { describe, expect, test } from '@jest/globals'
-import testCases from './testCases/125_validPalindrome'
-import { isPalindrome } from '../src/125_validPalindrome'
+import testCases from './testCases/125_validPalindrome.js'
+import { isPalindrome } from '../src/125_validPalindrome.js'
 
 describe('125. Valid palindrome', () => {
   testCases.forEach(testCase => {

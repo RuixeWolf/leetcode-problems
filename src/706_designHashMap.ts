@@ -35,7 +35,8 @@ myHashMap.get(2);    // 返回 -1（未找到），myHashMap 现在为 [[1,1]]
 最多调用 104 次 put、get 和 remove 方法
 */
 
-import testCases from '../tests/testCases/706_designHashMap'
+import { fileURLToPath } from 'url'
+import testCases from '../tests/testCases/706_designHashMap.js'
 
 class MyHashMap {
   mapLikedArray: number[][] = []
@@ -94,6 +95,8 @@ export function main (
 }
 
 // Debug
-if (require.main === module) {
-  main(testCases[0].input.operations, testCases[0].input.params)
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const { input, expected } = testCases[0]
+  const output = main(input.operations, input.params)
+  console.log({ input, output, expected })
 }

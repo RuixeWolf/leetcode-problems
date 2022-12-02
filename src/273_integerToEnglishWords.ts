@@ -101,7 +101,7 @@ function parseHundred (numStr: string): string {
  * @param {number} num - 0 ~ 2^31 - 1 之间的整数
  * @returns {string} 数字所对应的英文
  */
-function numberToWords (num: number): string {
+export function numberToWords (num: number): string {
   const numStr: string = num.toString(10)
   let result: string = ''
   // 解析 Hundred 及以下
@@ -123,5 +123,3 @@ function numberToWords (num: number): string {
   if (billionStr !== '000') result = `${parseHundred(billionStr)} Billion` + (result !== '' ? ` ${result}` : '')
   return result
 }
-
-export { numberToWords }
