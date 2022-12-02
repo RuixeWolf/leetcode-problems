@@ -1,0 +1,11 @@
+import { describe, test, expect } from '@jest/globals'
+import testCases from './testCases/<%= moduleName %>.js'
+import { <%= leetCodeFunctionName %> } from '../src/<%= moduleName %>.js'
+
+describe('<%= titleNumber %>. <%= titleEnglish %>', () => {
+  testCases.forEach((testCase, index) => {
+    test(`Test case index: ${index}, Input: ${testCase.input}`, () => {
+      expect(<%= leetCodeFunctionName %>(testCase.input)).toEqual(testCase.expected)
+    })
+  })
+})
