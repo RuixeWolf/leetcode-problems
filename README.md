@@ -40,10 +40,10 @@ yarn test
 
 ```shell
 # NPM
-npx jest [题目编号]
+npx jest [题目编号或名称]
 
 # Yarn
-yarn jest [题目编号]
+yarn jest [题目编号或名称]
 ```
 
 注：题解源码与单元测试文件的命名需要包含题目编号，如 `[题目编号]_[英文小驼峰题目名称].test.ts`
