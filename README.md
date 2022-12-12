@@ -1,6 +1,6 @@
 # LeetCode 算法题集
 
-Ruixe 的 LeetCode 算法题集，使用 TypeScript 语言，集成 Jest 单元测试
+Ruixe 的 LeetCode 算法题集，使用 TypeScript 语言，集成 Jest 单元测试，可快速新建题解源码与测试文件
 
 ## 新建题目
 
